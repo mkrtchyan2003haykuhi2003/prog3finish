@@ -83,7 +83,7 @@ function creatingObjects() {
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
             if (matrix[y][x] == 2) {
-                var grassEater = new GrassEater(x, y);
+                var grassEater = new GrassEater(x, y, 2);
                 grassEaterArr.push(grassEater);
                 grassEaterHashiv++;
             } else if (matrix[y][x] == 1) {
@@ -91,15 +91,15 @@ function creatingObjects() {
                 grassArr.push(grass);
                 grassHashiv++;
             } else if (matrix[y][x] == 3) {
-                var gishatich = new Gishatich(x, y);
+                var gishatich = new Gishatich(x, y, 3);
                 gishatichArr.push(gishatich);
                 gishatichHashiv++;
             } else if (matrix[y][x] == 4) {
-                var vampire = new Vampire(x, y);
+                var vampire = new Vampire(x, y, 4);
                 vampireArr.push(vampire);
                 vampireHashiv++;
             } else if (matrix[y][x] == 5) {
-                var werewolf = new Werewolf(x, y);
+                var werewolf = new Werewolf(x, y, 5);
                 werewolfArr.push(werewolf);
                 werewolfHashiv++;
             }
@@ -120,33 +120,33 @@ function game() {
             grassEaterArr[i].mul();
             grassEaterArr[i].move();
             grassEaterArr[i].die();
-
+            
         }
     }
     if (gishatichArr[0] !== undefined) {
         for (var i in gishatichArr) {
-            // gishatichArr[i].eat();
-            // gishatichArr[i].mul();
-            // gishatichArr[i].move();
-            // gishatichArr[i].die();
+            gishatichArr[i].eat();
+            gishatichArr[i].mul();
+            gishatichArr[i].move();
+            gishatichArr[i].die();
 
         }
     }
     if (vampireArr[0] !== undefined) {
         for (var i in vampireArr) {
-            // vampireArr[i].eat();
-            // vampireArr[i].mul();
-            // vampireArr[i].move();
-            // vampireArr[i].die();
+            vampireArr[i].eat();
+            vampireArr[i].mul();
+            vampireArr[i].move();
+            vampireArr[i].die();
 
         }
     }
     if (werewolfArr[0] !== undefined) {
         for (var i in werewolfArr) {
-            // werewolfArr[i].eat();
-            // werewolfArr[i].mul();
-            // werewolfArr[i].move();
-            // werewolfArr[i].die();
+            werewolfArr[i].eat();
+            werewolfArr[i].mul();
+            werewolfArr[i].move();
+            werewolfArr[i].die();
 
         }
     }
@@ -156,7 +156,9 @@ function game() {
         matrix: matrix,
         grassCounter: grassHashiv,
         grassEaterCounter: grassEaterHashiv,
-        //gishatichCounter: gishatichHashiv
+        gishatichCounter: gishatichHashiv,
+        vampireCounter: vampireHashiv,
+        werewolfCounter: werewolfHashiv
     }
 
     //! Send data over the socket to clients who listens "data"

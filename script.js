@@ -24,9 +24,9 @@ function setup() {
         matrix = data.matrix;
         grassCountElement.innerText = data.grassCounter;
         grassEaterCountElement.innerText = data.grassEaterCounter;
-        // gishatichCountElement.innerText = data.gishatichCounter;
-        // vampireCountElement.innerText = data.vampireCounter;
-        // werewolfCountElement.innerText = data.werewolfCounter;
+        gishatichCountElement.innerText = data.gishatichCounter;
+        vampireCountElement.innerText = data.vampireCounter;
+        werewolfCountElement.innerText = data.werewolfCounter;
        
         //! Every time it creates new Canvas woth new matrix size
         createCanvas(matrix[0].length * side, matrix.length * side)
