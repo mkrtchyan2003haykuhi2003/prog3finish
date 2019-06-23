@@ -39,7 +39,7 @@ module.exports = class Vampire extends LiveForm {
     chooseCell(character) {
         this.getNewCoordinates();
         return super.chooseCell(character);
-    } 
+    }
     move() {
 
 

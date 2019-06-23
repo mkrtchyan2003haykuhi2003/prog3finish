@@ -22,7 +22,7 @@ module.exports = class Gishatich extends LiveForm {
     chooseCell(character) {
         this.getNewCoordinates();
         return super.chooseCell(character);
-    } 
+    }
     move() {
 
 

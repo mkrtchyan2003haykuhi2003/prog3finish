@@ -20,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/ananunaki/programming3_by_ananun/issues"
   },
-  "homepage": "https://github.com/ananunaki/programming3_by_ananun#readme"
+  "homepage": "https://github.com/ananunaki/programming3_by_ananun#readme",
+  "devDependencies": {}
 }

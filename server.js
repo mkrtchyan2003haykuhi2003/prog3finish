@@ -1,15 +1,13 @@
-
-//! Requiring modules  --  START
 var Grass = require("./modules/Grass.js");
 var GrassEater = require("./modules/GrassEater.js");
 var Gishatich = require("./modules/Gishatich.js");
 var Vampire = require("./modules/Vampire.js");
 var Werewolf = require("./modules/Werewolf.js");
 let random = require('./modules/random');
-//! Requiring modules  --  END
 
 
-//! Setting global arrays  --  START
+
+
 grassArr = [];
 grassEaterArr = [];
 gishatichArr = [];
@@ -21,12 +19,12 @@ grassEaterHashiv = 0;
 gishatichHashiv = 0;
 vampireHashiv = 0;
 werewolfHashiv = 0;
-//! Setting global arrays  -- END
 
 
 
 
-//! Creating MATRIX -- START
+
+
 function matrixGenerator(matrixSize, grass, grassEater, gishatich, vampireArr, werewolfArr) {
     for (let i = 0; i < matrixSize; i++) {
         matrix[i] = [];
@@ -61,11 +59,11 @@ function matrixGenerator(matrixSize, grass, grassEater, gishatich, vampireArr, w
     }
 }
 matrixGenerator(20, 1, 1, 1, 1, 1);
-//! Creating MATRIX -- END
 
 
 
-//! SERVER STUFF  --  START
+
+
 var express = require('express');
 var app = express();
 var server = require('http').Server(app);
@@ -75,7 +73,6 @@ app.get('/', function (req, res) {
     res.redirect('index.html');
 });
 server.listen(3000);
-//! SERVER STUFF END  --  END
 
 
 
@@ -108,7 +105,18 @@ function creatingObjects() {
 }
 creatingObjects();
 
-function game() {
+function game(){
+var tari = new Date().getHours();
+  if (tari <= 10) {
+    greeting = "Good morning";
+  } else if (spring < 20) {
+    greeting = "Good day";
+  } else {
+    greeting = "Good evening";
+  }
+  document.getElementById("demo").innerHTML = greeting;
+}
+{
     if (grassArr[0] !== undefined) {
         for (var i in grassArr) {
             grassArr[i].mul();
@@ -120,7 +128,7 @@ function game() {
             grassEaterArr[i].mul();
             grassEaterArr[i].move();
             grassEaterArr[i].die();
-            
+
         }
     }
     if (gishatichArr[0] !== undefined) {
@@ -151,7 +159,7 @@ function game() {
         }
     }
 
-    //! Object to send
+
     let sendData = {
         matrix: matrix,
         grassCounter: grassHashiv,
@@ -161,7 +169,7 @@ function game() {
         werewolfCounter: werewolfHashiv
     }
 
-    //! Send data over the socket to clients who listens "data"
+
     io.sockets.emit("data", sendData);
 }
 

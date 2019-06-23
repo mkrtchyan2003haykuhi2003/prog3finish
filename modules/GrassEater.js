@@ -21,7 +21,7 @@ module.exports = class GrassEater extends LiveForm {
     chooseCell(character) {
         this.getNewCoordinates();
         return super.chooseCell(character);
-    } 
+    }
     move() {
 
 
@@ -39,7 +39,7 @@ module.exports = class GrassEater extends LiveForm {
             this.x = newX;
             this.life--;
         }
-        
+
     }
     eat() {
 
