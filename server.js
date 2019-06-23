@@ -20,10 +20,14 @@ gishatichHashiv = 0;
 vampireHashiv = 0;
 werewolfHashiv = 0;
 
+weather = 1;
 
-
-
-
+setInterval(() => {
+    weather++;
+    if (weather > 4) {
+        weather = 1;
+    }
+}, 5000)
 
 function matrixGenerator(matrixSize, grass, grassEater, gishatich, vampireArr, werewolfArr) {
     for (let i = 0; i < matrixSize; i++) {
@@ -58,7 +62,7 @@ function matrixGenerator(matrixSize, grass, grassEater, gishatich, vampireArr, w
         matrix[customY][customX] = 5;
     }
 }
-matrixGenerator(20, 1, 1, 1, 1, 1);
+matrixGenerator(30, 20, 5, 3, 3, 3);
 
 
 
@@ -105,18 +109,8 @@ function creatingObjects() {
 }
 creatingObjects();
 
-function game(){
-var tari = new Date().getHours();
-  if (tari <= 10) {
-    greeting = "Good morning";
-  } else if (spring < 20) {
-    greeting = "Good day";
-  } else {
-    greeting = "Good evening";
-  }
-  document.getElementById("demo").innerHTML = greeting;
-}
-{
+function game() {
+
     if (grassArr[0] !== undefined) {
         for (var i in grassArr) {
             grassArr[i].mul();
@@ -166,7 +160,8 @@ var tari = new Date().getHours();
         grassEaterCounter: grassEaterHashiv,
         gishatichCounter: gishatichHashiv,
         vampireCounter: vampireHashiv,
-        werewolfCounter: werewolfHashiv
+        werewolfCounter: werewolfHashiv,
+        weather: weather
     }
 
 

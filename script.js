@@ -12,8 +12,8 @@ function setup() {
     let gishatichCountElement = document.getElementById('gishatichCount');
     let vampireCountElement = document.getElementById('vampireCount');
     let werewolfCountElement = document.getElementById('werewolfCount');
-
-
+    let ex = document.getElementById('ex');
+    // let weatherCountElement = document.getElementById('weatherCount');
 
     socket.on("data", drawCreatures);
 
@@ -25,18 +25,21 @@ function setup() {
         gishatichCountElement.innerText = data.gishatichCounter;
         vampireCountElement.innerText = data.vampireCounter;
         werewolfCountElement.innerText = data.werewolfCounter;
-
+        // weatherCountElement.innerText = data.weatherCounter;
 
         createCanvas(matrix[0].length * side, matrix.length * side)
 
         background('#acacac');
 
-
+        // console.log(data.weather)
 
         for (var i = 0; i < matrix.length; i++) {
             for (var j = 0; j < matrix[i].length; j++) {
                 if (matrix[i][j] == 1) {
                     fill("green");
+                    // if (weather = "SPRING") {
+                    //     fill(rgb(102, 255, 153));
+                    // }
                     rect(j * side, i * side, side, side);
                 } else if (matrix[i][j] == 2) {
                     fill("orange");
@@ -54,6 +57,52 @@ function setup() {
                     fill('yellow');
                     rect(j * side, i * side, side, side);
                 }
+
+
+                if (data.weather == 1) {
+                    ex.innerText = "Garun"
+                    // console.log("garun")
+                    document.body.style.backgroundColor = "green";
+                    if (matrix[i][j] == 1) {
+                        fill("green");
+                        rect(j * side, i * side, side, side);
+                    }
+                }
+                if (data.weather == 2) {
+                    ex.innerText = "Amar"
+
+                    // console.log("amar")
+                    document.body.style.backgroundColor = "yellow";
+                    if (matrix[i][j] == 1) {
+                        fill("black");
+                        rect(j * side, i * side, side, side);
+                    }
+                }
+                if (data.weather == 3) {
+                    ex.innerText = "Ashun"
+
+                    // console.log("ashun")
+                    document.body.style.backgroundColor = "cccc00";
+                    if (matrix[i][j] == 1) {
+                        fill("green");
+                        rect(j * side, i * side, side, side);
+                    }
+                }
+                if (data.weather == 4) {
+                    ex.innerText = "Dzmer"
+
+                    // console.log("dzmer")
+                    document.body.style.backgroundColor = "00cccc";
+                    if (matrix[i][j] == 1) {
+                        fill("#757557");
+                        rect(j * side, i * side, side, side);
+                    }
+                    else if (matrix[i][j] == 3) {
+                        fill('#0000cc');
+                        rect(j * side, i * side, side, side);
+                    }
+                }
+
             }
         }
     }

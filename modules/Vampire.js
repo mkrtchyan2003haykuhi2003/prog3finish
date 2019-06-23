@@ -112,6 +112,7 @@ module.exports = class Vampire extends LiveForm {
             matrix[newCell[1]][newCell[0]] = 4;
             this.life = 8;
         }
+        
     }
     die() {
         if (this.life <= 10) {
