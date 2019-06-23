@@ -60,7 +60,7 @@ function setup() {
 
 
                 if (data.weather == 1) {
-                    ex.innerText = "Garun"
+                    ex.innerText = "Գարուն"
                     // console.log("garun")
                     document.body.style.backgroundColor = "green";
                     if (matrix[i][j] == 1) {
@@ -69,7 +69,7 @@ function setup() {
                     }
                 }
                 if (data.weather == 2) {
-                    ex.innerText = "Amar"
+                    ex.innerText = "Ամառ"
 
                     // console.log("amar")
                     document.body.style.backgroundColor = "yellow";
@@ -79,7 +79,7 @@ function setup() {
                     }
                 }
                 if (data.weather == 3) {
-                    ex.innerText = "Ashun"
+                    ex.innerText = "Աշուն"
 
                     // console.log("ashun")
                     document.body.style.backgroundColor = "cccc00";
@@ -89,7 +89,7 @@ function setup() {
                     }
                 }
                 if (data.weather == 4) {
-                    ex.innerText = "Dzmer"
+                    ex.innerText = "Ձմեռ"
 
                     // console.log("dzmer")
                     document.body.style.backgroundColor = "00cccc";
